@@ -1,0 +1,85 @@
+<div class="subnav navbar navbar-fixed-top navbar-default">
+    <div class="col-md-12">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3" ng-click="isCollapsed = !isCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-bars"></i>
+            </button>
+
+        </div>
+        <div class="hidden-xs">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a ui-sref="app.profile.videos">Swing Video</a>
+                </li>
+                <li>
+                    <a ui-sref="app.profile.statistics" role="button" data-toggle="modal">Statistics</a>
+                </li>
+                <li>
+                    <a ui-sref="app.profile.social" role="button" data-toggle="modal">Social</a>
+                </li>
+                <li>
+                    <a ui-sref="app.profile.likes" role="button" data-toggle="modal">Likes</a>
+                </li>
+                <li>
+                    <a ui-sref="app.profile.edit" ng-show="canEdit">Edit Profile</a>
+                </li>
+                <li>
+                    <a ui-sref="app.profile.subscription" ng-show="canEdit">Subscription</a>
+                </li>
+            </ul>
+        </div>
+        <div class="visible-xs" collapse="!isCollapsed">
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a ui-sref="app.profile.videos">Swing Video</a>
+                </li>
+                <li>
+                    <a ui-sref="app.profile.statistics" role="button" data-toggle="modal">Statistics</a>
+                </li>
+                <li>
+                    <a ui-sref="app.profile.social" role="button" data-toggle="modal">Social</a>
+                </li>
+                <li>
+                    <a ui-sref="app.profile.likes" role="button" data-toggle="modal">Likes</a>
+                </li>
+                <li>
+                    <a ui-sref="app.profile.edit" ng-show="canEdit">Edit Profile</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="profileWrapper">
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="panel panel-default ">
+                <div class="panel-heading ">
+                    <a style="margin-top:10px; cursor: pointer;" class="pull-right" ng-click="likeUser(profileInfo.firstName, profileInfo.lastName)"><span class="fa fa-thumbs-o-up fa-2x"></span></a>
+                    <a style="margin-top:10px; cursor: pointer;" class="pull-right" ng-click="unlikeUser(profileInfo.firstName, profileInfo.lastName)"><span class="fa fa-thumbs-o-down fa-2x"></span></a>
+                    <h4>{{profileInfo.firstName}} {{profileInfo.lastName}} </h4>
+                </div>
+                <div class="panel-body ">
+                    <div class="well well-sm ">
+                        <div ng-if="profileInfo.profile_pic != undefined">
+                            <img style="width:450px; height:auto " ng-src="{{profileInfo.profile_pic._url}}" class="img-responsive">
+                        </div>
+                        <div ng-if="profileInfo.profile_pic == undefined">
+                            <img style="width:450px; height:auto " ng-src="http://classicjuniorgolf.com/Image/GolferOnly.png" class="img-responsive">
+                        </div>
+
+                    </div>
+                    <hr>
+                    <h5>{{profileInfo.city}}</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-8 col-md-8">
+            <div ui-view></div>
+        </div>

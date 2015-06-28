@@ -1,0 +1,24 @@
+<h3>Likes:</h3>
+
+
+<div ng-repeat="user in likedUsers">
+    <div class="col-md-4 col-sm-6">
+        <div ng-if="user.profile_pic != undefined">
+            <img style="width:150px; max-height:150px" ng-src="{{user.profile_pic._url}}" class="img-responsive img-circle">
+        </div>
+        <div ng-if="user.profile_pic == undefined">
+            <img style="width:150px; max-height:100%" ng-src="http://classicjuniorgolf.com/Image/GolferOnly.png" class="img-responsive img-circle">
+        </div>
+        <hr>
+        <h4>{{user.firstName}} {{user.lastName}}</h4>
+        <div ng-show="canEdit">
+            <label>Interest Level:</label>
+            <div class="btn-group">
+                <label class="btn btn-primary btn-sm" ng-model="user.interest_level" btn-radio="'high'">High</label>
+                <label class="btn btn-primary btn-sm" ng-model="user.interest_level" btn-radio="'med'">Med</label>
+                <label class="btn btn-primary btn-sm" ng-model="user.interest_level" btn-radio="'low'">Low</label>
+            </div>
+            <button class="btn btn-danger btn-sm" ng-click="saveInterestLevel()">save interest level</button>
+        </div>
+    </div>
+</div>

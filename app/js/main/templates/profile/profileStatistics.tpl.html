@@ -1,0 +1,20 @@
+<h1>STATS</h1>
+
+<h2>Stats Import</h2>
+
+<div class="block center">
+    <ng-csv-import class="import" content="csv.content" header="csv.header" separator="csv.separator" result="csv.result"></ng-csv-import>
+</div>
+
+<div ng-if="csvParsedData" class="table-container">
+    <table st-table="csvParsedData.data" class="table table-striped">
+        <tbody ng-repeat="row in csvParsedData.data">
+            <tr ng-if="$index == 0">
+                <th ng-repeat="col in row">{{ col }}</th>
+            </tr>
+            <tr ng-if="$index > 1">
+                <td ng-repeat="col in row">{{ col }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

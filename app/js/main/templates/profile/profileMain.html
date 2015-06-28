@@ -1,0 +1,63 @@
+<!-- BEGIN PROFILE CONTENT -->
+<div class="profile-content fade-in-up">
+    <div class="row ng-scope">
+        <div class="col-md-6">
+            <!-- BEGIN PORTLET -->
+            <div class="portlet light ">
+                <div class="portlet-title">
+                    <div class="caption caption-md">
+                        <i class="icon-bar-chart theme-font hide"></i>
+                        <span class="caption-subject font-blue-madison bold uppercase">Social</span>
+                    </div>
+                    <div class="actions">
+                        <div class="btn-group btn-group-devided" data-toggle="buttons">
+                            <label class="btn btn-transparent grey-salsa btn-circle btn-sm active">
+                                <input type="radio" name="options" class="toggle" id="option1">Facebook</label>
+                            <label class="btn btn-transparent grey-salsa btn-circle btn-sm">
+                                <input type="radio" name="options" class="toggle" id="option2">Twitter</label>
+                            <label class="btn btn-transparent grey-salsa btn-circle btn-sm">
+                                <input type="radio" name="options" class="toggle" id="option2">Youtube</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div twitter-timeline="601922068054052865" href="https://twitter.com/{{profileInfo.twitter}}" data-screen-name="{{profileInfo.twitter}}" auto-resize="true" css-url="css/twitter.css" data-tweet-limit="2">Loading tweets...</div>
+                </div>
+            </div>
+            <!-- END PORTLET -->
+        </div>
+        <div class="col-md-6">
+            <!-- BEGIN PORTLET -->
+            <div class="portlet light">
+                <div class="portlet-title tabbable-line">
+                    <div class="caption caption-md">
+                        <i class="icon-globe theme-font hide"></i>
+                        <span class="caption-subject font-blue-madison bold uppercase">Swing Videos</span>
+                    </div>
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#" data-target="#tab_1_1" data-toggle="tab">
+						FO</a>
+                        </li>
+                        <li>
+                            <a href="#" data-target="#tab_1_2" data-toggle="tab">
+						DTL </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="portlet-body">
+                    <!--BEGIN TABS-->
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab_1_1">
+                            <div class="embed-responsive embed-responsive-16by9 ">
+                                <youtube-video class="embed-responsive-item " video-url="profileInfo.videoFO " player-vars="playerVars "></youtube-video>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END TABS-->
+                </div>
+            </div>
+            <!-- END PORTLET -->
+        </div>
+    </div>
+</div>

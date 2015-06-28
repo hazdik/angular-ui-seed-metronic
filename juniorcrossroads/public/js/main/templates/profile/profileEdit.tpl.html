@@ -1,0 +1,65 @@
+<div class="well well-lg">
+
+
+    <tabset type="pills">
+        <tab heading="Statistics">
+            <h2>Stats Import</h2>
+
+            <div class="block center">
+                <ng-csv-import class="import" content="csv.content" header="csv.header" separator="csv.separator" result="csv.result"></ng-csv-import>
+            </div>
+
+            <div ng-if="csvParsedData" class="table-container">
+                <table st-table="csvParsedData.data" class="table table-striped">
+                    <tbody ng-repeat="row in csvParsedData.data">
+                        <tr ng-if="$index == 0">
+                            <th ng-repeat="col in row">{{ col }}</th>
+                        </tr>
+                        <tr ng-if="$index > 1">
+                            <td ng-repeat="col in row">{{ col }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </tab>
+
+        <tab heading="Profile Photo">
+            <div class="row">
+                <h2>Upload Profile Pic</h2>
+                <input type="file" class="form-control" file-model="profileInfo.profile_pic">
+                <button class="btn btn-primary" ng-click="updateProfilePic()">Update Picture</button>
+            </div>
+        </tab>
+
+        <tab heading="Account">
+            <div class="alert alert-error bg-danger " ng-show="error ">
+                {{ errorMsg }}
+            </div>
+            <div ng-show="loading "><img src="./img/loader.gif "> </div>
+            <div class="form-group ">
+                <label>Your Role</label>
+                <div class="btn-group">
+                    <label class="btn btn-primary" ng-model="profileInfo.role" btn-radio="'coach'">Coach</label>
+                    <label class="btn btn-primary" ng-model="profileInfo.role" btn-radio="'player'">Player</label>
+                </div>
+                <hr>
+                <label>Your First Name</label>
+                <input type="text " ng-model="profileInfo.firstName " class="form-control " placeholder="Enter your first name " required autofocus>
+                <label>Your Last Name</label>
+                <input type="text " ng-model="profileInfo.lastName " class="form-control " placeholder="Enter your last name " required autofocus>
+                <label>Your City</label>
+                <input type="text " ng-model="profileInfo.city " class="form-control " placeholder="Enter your City " required autofocus>
+
+                <label>Your Twitter Name</label>
+                <input type="text " ng-model="profileInfo.twitter " class="form-control " placeholder="Enter your Twitter name." required autofocus>
+                <label for="inputVideoDTL ">YouTube Link to DTL swing video</label>
+                <input type="text " id="videoDTL " ng-model="profileInfo.videoDTL " class="form-control " placeholder="YouTube Link goes here " required autofocus>
+                <label for="inputVideoFO ">YouTube Link to FO swing video</label>
+                <input type="text " id="videoFO " ng-model="profileInfo.videoFO " class="form-control " placeholder="YouTube Link goes here " required autofocus>
+            </div>
+
+            <button class="btn btn-md btn-primary btn-block " type="submit " ng-click="saveProfile() ">Save</button>
+        </tab>
+    </tabset>
+
+</div>

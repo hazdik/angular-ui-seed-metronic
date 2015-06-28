@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <div class="account-wall">
+                <div class="tab-pane active" id="login">
+                    <img class="profile-img" src="http://classicjuniorgolf.com/Image/GolferOnly.png" alt="">
+                    <div ng-show="loading"><img src="./img/loader.gif">
+                    </div>
+
+
+
+                    <form class="form-signin" action="" method="">
+                        <input type="text" ng-model="user.username" class="form-control" placeholder="Email address" required autofocus>
+                        <input type="password" ng-model="user.password" id="inputPassword" class="form-control" placeholder="Password" required>
+                        <button class="btn btn-lg btn-primary btn-block signIn" type="submit" ng-click="authenticateUser()">Sign in</button>
+                        <button class="btn btn-lg btn-danger btn-block register" type="submit" ng-click="signUp()">Register</button>
+                        <button class="btn btn-lg btn-primary btn-block  facebook" ng-click="FBLogin()"><i class="fa fa-facebook-official fa-lg pull-left"></i> Login With Facebook </button>
+                    </form>
+                </div>
+                <div class="alert alert-error bg-danger" ng-show="error">
+                    {{ errorMsg }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

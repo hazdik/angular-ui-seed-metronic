@@ -1,0 +1,18 @@
+<h3>Likes:</h3>
+
+<div ng-repeat="user in likedUsers">
+    <div class="col-md-4 col-sm-6">
+        <a ng-click="goToProfile(user.username)">
+            <div ng-if="user.profile_pic != undefined">
+                <img style="width:150px; max-height:150px" ng-src="{{user.profile_pic._url}}" class="img-responsive img-circle">
+            </div>
+        </a>
+        <a ng-click="goToProfile(user.username)">
+            <div ng-if="user.profile_pic == undefined">
+                <img style="width:150px; max-height:100%" ng-src="http://classicjuniorgolf.com/Image/GolferOnly.png" class="img-responsive img-circle">
+            </div>
+        </a>
+        <hr>
+        <h4>{{user.firstName}} {{user.lastName}}</h4>
+    </div>
+</div>

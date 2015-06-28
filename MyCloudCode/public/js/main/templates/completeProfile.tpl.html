@@ -1,0 +1,29 @@
+<div ng-show="loading"><img src="./img/loader.gif"> </div>
+<div ng-hide="loading">
+    <h1> Complete your Profile Before Proceeding </h1>
+
+    <div class="btn-group">
+        <label class="btn btn-primary" ng-model="profileInfo.role" btn-radio="'coach'">Coach</label>
+        <label class="btn btn-primary" ng-model="profileInfo.role" btn-radio="'player'">Player</label>
+    </div>
+
+    <hr>
+
+    <label>Your First Name</label>
+    <input type="text " ng-model="profileInfo.firstName " class="form-control " placeholder="Enter your first name " required autofocus>
+    <label>Your Last Name</label>
+    <input type="text " ng-model="profileInfo.lastName " class="form-control " placeholder="Enter your last name " required autofocus>
+    <label>Your Email</label>
+    <input type="text " ng-model="profileInfo.email " class="form-control " placeholder="Enter your last name " required autofocus>
+
+    <hr>
+
+    <label for="inputVideoDTL ">YouTube Link to DTL swing video</label>
+    <input type="text " id="videoDTL " ng-model="profileInfo.videoDTL " class="form-control " placeholder="YouTube Link goes here " required autofocus>
+    <label for="inputVideoFO ">YouTube Link to FO swing video</label>
+    <input type="text " id="videoFO " ng-model="profileInfo.videoFO " class="form-control " placeholder="YouTube Link goes here " required autofocus>
+
+    <hr>
+
+    <button class="btn btn-md btn-primary btn-block " type="submit " ng-click="saveProfile() ">Save</button>
+</div>

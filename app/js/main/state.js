@@ -1,21 +1,82 @@
 // Sub-application/main Level State
-app.config(['$stateProvider', function($stateProvider) {
+app.config(['$stateProvider', function ($stateProvider) {
 
-  $stateProvider
-    .state('app.home', {
-      url: '/home',
-      templateUrl: 'js/main/templates/home.tpl.html',
-      controller: 'HomeCtrl'
-    })
-    .state('app.about', {
-      url: '/about',
-      templateUrl: 'js/main/templates/about.tpl.html',
-      controller: 'AboutCtrl'
-    })
-    .state('app.contact', {
-      url: '/contact',
-      templateUrl: 'js/main/templates/contact.tpl.html',
-      controller: 'ContactCtrl'
-    });
+    $stateProvider
+        .state('app.completeProfile', {
+            url: '/completeProfile',
+            templateUrl: 'js/main/templates/completeProfile.tpl.html',
+            controller: 'ProfileCtrl'
+        })
+        .state('app.profile', {
+            url: '/profile/:id',
+            templateUrl: 'js/main/templates/profile/profile.tpl.html',
+            controller: 'ProfileCtrl'
+        })
+        .state('app.profile.main', {
+            url: '/main',
+            templateUrl: 'js/main/templates/profile/profileMain.html',
+            controller: 'ProfileCtrl',
+        })
+        .state('app.profile.statistics', {
+            url: '/statistics',
+            templateUrl: 'js/main/templates/profile/profileStatistics.tpl.html',
+            controller: 'ProfileCtrl',
+        })
+        .state('app.profile.videos', {
+            url: '/videos',
+            templateUrl: 'js/main/templates/profile/profileVideos.tpl.html',
+            controller: 'ProfileCtrl',
+        })
+        .state('app.profile.social', {
+            url: '/social',
+            templateUrl: 'js/main/templates/profile/profileSocial.tpl.html',
+            controller: 'ProfileCtrl',
+        })
+        .state('app.profile.edit', {
+            url: '/edit',
+            templateUrl: 'js/main/templates/profile/profileEdit.tpl.html',
+            controller: 'ProfileCtrl',
+        })
+        .state('app.profile.subscription', {
+            url: '/subscription',
+            templateUrl: 'js/main/templates/profile/profileSubscribe.tpl.html',
+            controller: 'ProfileCtrl',
+        })
+        .state('app.profile.likes', {
+            url: '/likes',
+            templateUrl: 'js/main/templates/profile/profileLikes.tpl.html',
+            controller: 'ProfileCtrl',
+        })
+
+    .state('app.profiles', {
+            url: '/profiles',
+            templateUrl: 'js/main/templates/profiles/profiles.tpl.html',
+            controller: 'ProfilesCtrl',
+        })
+        .state('app.profiles.coaches', {
+            url: '/coaches',
+            templateUrl: 'js/main/templates/profiles/coaches.tpl.html',
+            controller: 'CoachesCtrl',
+        })
+        .state('app.profiles.players', {
+            url: '/players',
+            templateUrl: 'js/main/templates/profiles/players.tpl.html',
+            controller: 'PlayersCtrl',
+        })
+        .state('app.tournaments', {
+            url: '/tournaments',
+            templateUrl: 'js/main/templates/tournaments.tpl.html',
+            controller: 'TournamentsCtrl',
+        })
+        .state('app.update', {
+            url: '/update',
+            templateUrl: 'js/main/templates/update.tpl.html',
+            controller: 'UpdateCtrl'
+        })
+        .state('app.api', {
+            url: '/api',
+            templateUrl: 'js/main/templates/api.tpl.html',
+            controller: 'ApiCtrl',
+        })
 
 }]);

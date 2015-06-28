@@ -1,0 +1,49 @@
+<header class="navbar navbar-fixed-top header">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3" ng-click="isCollapsed = !isCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <i class="fa fa-bars"></i>
+        </button>
+
+        <a class="navbar-brand hidden-xs" href="#">Junior Golf Crossroads</a>
+        <a class="navbar-brand visible-xs" href="#">Junior Golf Crossroads</a>
+    </div>
+    <nav class="hidden-xs">
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a ui-sref="home">Home</a>
+            </li>
+            <li>
+                <a ng-hide="loggedInUser == null" ui-sref="app.profile({id:loggedInUser.id})">My Profile</a>
+            </li>
+            <li>
+                <a ng-hide="loggedInUser == null" ui-sref="app.update">Update</a>
+            </li>
+            <li>
+                <a ng-hide="loggedInUser == null" ui-sref="app.tournaments">Tournaments</a>
+            </li>
+            <li>
+                <a ng-hide="loggedInUser == null" ui-sref="app.profiles">Profiles</a>
+            </li>
+            <li>
+                <a ng-hide="loggedInUser == null" ng-click="logOut()">Logout</a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="visible-xs" collapse="!isCollapsed">
+        <ul class="nav navbar-nav">
+            <li>
+                <a ui-sref="home">Home</a>
+            </li>
+            <li>
+                <a ng-hide="loggedInUser == null" ui-sref="app.profile({id:loggedInUser.id})">Profile</a>
+            </li>
+            <li>
+                <a ng-hide="loggedInUser == null" ui-sref="app.profiles">Profiles</a>
+            </li>
+            <li>
+                <a ng-hide="loggedInUser == null" ng-click="logOut()">Logout</a>
+            </li>
+        </ul>
+    </nav>
+</header>

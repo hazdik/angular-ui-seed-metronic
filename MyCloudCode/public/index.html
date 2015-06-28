@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="app" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="app" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Junior Golf Crossroads : The path to college golf!</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+    <link type="text/css" rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+    <link type="text/css" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="css/app.css" />
+    <link type="text/css" rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" type="text/css" href="js/core/snackbar/css/angular.snackbar.css">
+    <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="bower_components/ihover/src/ihover.css">
+</head>
+
+<body>
+
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+    <div ui-view="navbar" ng-hide="firstTime"></div>
+
+    <div class="main" ui-view="main"></div>
+
+    <div class="snackbar-container" data-snackbar="true"></div>
+
+    <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+    <script src="bower_components/papaparse.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+
+    <!-- STRIPE -->
+    <script src="bower_components/angular-payments/lib/angular-payments.min.js"></script>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script>
+        Stripe.setPublishableKey('pk_test_owITHzrJOhuvlZ8cjWcyiSQL');
+    </script>
+
+    <!-- CSV IMPORTS -->
+    <script src="bower_components/angular-csv-import/dist/angular-csv-import.min.js"></script>
+
+    <!-- AGULAR UI COMPONENTS -->
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <!-- PARSE -->
+    <script src="https://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+    <script src="bower_components/parse-angular-patch/dist/parse-angular.js"></script>
+
+    <!-- ANGULAR UI -->
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+    <!-- SMART TABLE-->
+    <script src="bower_components/angular-smart-table/dist/smart-table.min.js"></script>
+
+    <!-- Include YT library and this directive -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="bower_components/angular-youtube-mb/dist/angular-youtube-embed.min.js"></script>
+
+    <!-- TWITTER TIMELINE -->
+    <script src="bower_components/twitterTimeline.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <!-- APP -->
+    <script src="js/app.js"></script>
+    <script src="js/core/services/VersionService.js"></script>
+    <script src="js/core/services/parseDataLayer.js"></script>
+    <script src="js/core/filters/VersionFilter.js"></script>
+    <script src="js/core/directives/VersionDirective.js"></script>
+    <script src="js/core/directives/fileModelDirective.js"></script>
+
+    <!-- CORE -->
+    <script src="js/core/state.js"></script>
+    <script src="js/core/controllers/AppCtrl.js"></script>
+    <script src="js/core/controllers/NavbarCtrl.js"></script>
+    <script src="js/core/controllers/ApiCtrl.js"></script>
+    <!--SNACKBAR-->
+    <script type="text/javascript" src="js/core/snackbar/angular.snackbar.min.js"></script>
+
+
+    <!-- MAIN -->
+    <script src="js/main/state.js"></script>
+    <script src="js/main/controllers/HomeCtrl.js"></script>
+    <script src="js/main/controllers/LandingCtrl.js"></script>
+    <script src="js/main/controllers/ProfileCtrl.js"></script>
+    <script src="js/main/controllers/UpdateCtrl.js"></script>
+    <script src="js/main/controllers/TournamentsCtrl.js"></script>
+    <script src="js/main/controllers/CoachesCtrl.js"></script>
+    <script src="js/main/controllers/PlayersCtrl.js"></script>
+    <script src="js/main/controllers/ProfilesCtrl.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+<label>Tournament Name</label>
+<input type="text " ng-model="tournament.name " class="form-control " placeholder="Enter tournament name " required autofocus>
+
+<label>Tournament Location</label>
+<input type="text " ng-model="tournament.location " class="form-control " placeholder="Enter tournament location " required autofocus>
+
+<button class="btn btn-primary" ng-click="newTournament()">Add New Tournament</button>
+
+
+<div ng-show="loading"><img src="./img/loader.gif"> </div>
+<ul ng-show="tournaments.length != 0">
+    <li ng-repeat="tournament in tournaments">{{ tournament.id }} | {{tournament.attributes.name}} | {{tournament.attributes.location}} </li>
+</ul>

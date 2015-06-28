@@ -1,0 +1,22 @@
+<div class="col-md-3 col-md-offset-5 tex-center" ng-show="loading">
+    <img src="./img/loader.gif ">
+</div>
+
+<div class="row">
+    <div ng-repeat="coach in coaches" class="col-md-3 padding">
+        <div class="ih-item circle effect6 scale_up">
+            <a ng-click="goToProfile(coach.username)">
+                <div class="img" ng-if="coach.profile_pic != undefined">
+                    <img ng-src="{{coach.profile_pic._url}}" class="img-responsive img-center img">
+                </div>
+                <div class="img" ng-if="coach.profile_pic == undefined">
+                    <img ng-src="http://classicjuniorgolf.com/Image/GolferOnly.png" class="img-responsive img-center img">
+                </div>
+                <div class="info">
+                    <h3>{{coach.firstName}} {{coach.lastName}}</h3>
+                    <p>Description goes here</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

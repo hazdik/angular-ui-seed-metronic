@@ -1,0 +1,13 @@
+<div class="col-md-4 col-sm-6">
+    <div class="panel panel-default">
+        <div class="panel-heading"><a href="#" class="pull-right">View all</a>
+            <h4>Updates</h4>
+        </div>
+        <div class="panel-body">
+            <div ng-show="loading"><img src="./img/loader.gif"> </div>
+            <ul ng-show="updates.length != 0">
+                <li ng-repeat="update in updates">{{ update.text }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
